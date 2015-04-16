@@ -1,5 +1,6 @@
-<h1>New mileagelog</h1>
+<%- model_class = Mileagelog -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => Mileagelog %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', mileagelogs_path %>
