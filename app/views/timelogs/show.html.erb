@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @timelog.rate %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @timelog.date %>
+</p>
+
+<p>
+  <strong>Nature work:</strong>
+  <%= @timelog.nature_work %>
+</p>
+
+<p>
+  <strong>Hours worked:</strong>
+  <%= @timelog.hours_worked %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @timelog.total %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @timelog.employee %>
+</p>
+
+<p>
+  <strong>Work order:</strong>
+  <%= @timelog.work_order %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @timelog.user %>
+</p>
+
+<%= link_to 'Edit', edit_timelog_path(@timelog) %> |
+<%= link_to 'Back', timelogs_path %>
