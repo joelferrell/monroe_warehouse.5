@@ -29,6 +29,7 @@ class TimelogsController < ApplicationController
   # POST /timelogs.json
   def create
     @timelog = Timelog.new(timelog_params)
+    @timelog.user = current_user
 
     respond_to do |format|
       if @timelog.save
