@@ -1,18 +1,58 @@
-<%= simple_form_for(@part) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :part_number %>
-    <%= f.input :part_description %>
-    <%= f.input :unit_price %>
-    <%= f.input :unit_quantity %>
-    <%= f.input :parts_total %>
-    <%= f.input :tax %>
-    <%= f.input :shipping_cost %>
-    <%= f.input :invoice %>
+<%= form_for @part, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :part_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :part_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :part_description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :part_description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :unit_price, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :unit_price, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :unit_quantity, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :unit_quantity, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :parts_total, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :parts_total, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tax, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :tax, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipping_cost, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :shipping_cost, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :invoice, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :invoice, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  parts_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
