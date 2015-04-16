@@ -1,44 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Timelog -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Timelog %></h1>
+</div>
 
-<p>
-  <strong>Rate:</strong>
-  <%= @timelog.rate %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:rate) %></dt>
+      <dd><pre class="prettyprint"><%= @timelog.rate %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:date) %></dt>
+      <dd><pre class="prettyprint"><%= @timelog.date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:nature_work) %></dt>
+      <dd><pre class="prettyprint"><%= @timelog.nature_work %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:hours_worked) %></dt>
+      <dd><pre class="prettyprint"><%= @timelog.hours_worked %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:total) %></dt>
+      <dd><pre class="prettyprint"><%= @timelog.total %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee) %></dt>
+      <dd><pre class="prettyprint"><%= @timelog.employee %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @timelog.date %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              timelogs_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_timelog_path(@timelog), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              timelog_path(@timelog),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Nature work:</strong>
-  <%= @timelog.nature_work %>
-</p>
-
-<p>
-  <strong>Hours worked:</strong>
-  <%= @timelog.hours_worked %>
-</p>
-
-<p>
-  <strong>Total:</strong>
-  <%= @timelog.total %>
-</p>
-
-<p>
-  <strong>Employee:</strong>
-  <%= @timelog.employee %>
-</p>
-
-<p>
-  <strong>Work order:</strong>
-  <%= @timelog.work_order %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @timelog.user %>
-</p>
-
-<%= link_to 'Edit', edit_timelog_path(@timelog) %> |
-<%= link_to 'Back', timelogs_path %>

@@ -1,18 +1,46 @@
-<%= simple_form_for(@timelog) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :rate %>
-    <%= f.input :date %>
-    <%= f.input :nature_work %>
-    <%= f.input :hours_worked %>
-    <%= f.input :total %>
-    <%= f.input :employee %>
-    <%= f.association :work_order %>
-    <%= f.association :user %>
+<%= form_for @timelog, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :rate, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :rate, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nature_work, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :nature_work, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :hours_worked, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :hours_worked, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :total, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employee, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employee, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  timelogs_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
