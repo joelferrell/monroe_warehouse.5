@@ -1,69 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = WorkOrder -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => WorkOrder %></h1>
+</div>
 
-<p>
-  <strong>Wo number:</strong>
-  <%= @work_order.wo_number %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:wo_number) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.wo_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:start_date) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.start_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:comp_date) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.comp_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:requestor) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.requestor %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:priority) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.priority %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:repair_facility) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.repair_facility %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:repair_type) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.repair_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:location) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.location %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:summary) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.summary %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:est_completion) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.est_completion %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:percent_complete) %></dt>
+      <dd><pre class="prettyprint"><%= @work_order.percent_complete %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @work_order.start_date %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              work_orders_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_work_order_path(@work_order), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              work_order_path(@work_order),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Comp date:</strong>
-  <%= @work_order.comp_date %>
-</p>
-
-<p>
-  <strong>Requestor:</strong>
-  <%= @work_order.requestor %>
-</p>
-
-<p>
-  <strong>Priority:</strong>
-  <%= @work_order.priority %>
-</p>
-
-<p>
-  <strong>Repair facility:</strong>
-  <%= @work_order.repair_facility %>
-</p>
-
-<p>
-  <strong>Repair type:</strong>
-  <%= @work_order.repair_type %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @work_order.location %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @work_order.summary %>
-</p>
-
-<p>
-  <strong>Est completion:</strong>
-  <%= @work_order.est_completion %>
-</p>
-
-<p>
-  <strong>Percent complete:</strong>
-  <%= @work_order.percent_complete %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @work_order.user %>
-</p>
-
-<p>
-  <strong>Item:</strong>
-  <%= @work_order.item %>
-</p>
-
-<%= link_to 'Edit', edit_work_order_path(@work_order) %> |
-<%= link_to 'Back', work_orders_path %>
