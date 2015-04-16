@@ -1,4 +1,5 @@
 ActiveAdmin.register Timelog do
+  permit_params :rate, :date, :nature_work, :hours_worked, :total, :employee
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
