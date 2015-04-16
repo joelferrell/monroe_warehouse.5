@@ -1,0 +1,49 @@
+<h1>Listing work_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wo number</th>
+      <th>Start date</th>
+      <th>Comp date</th>
+      <th>Requestor</th>
+      <th>Priority</th>
+      <th>Repair facility</th>
+      <th>Repair type</th>
+      <th>Location</th>
+      <th>Summary</th>
+      <th>Est completion</th>
+      <th>Percent complete</th>
+      <th>User</th>
+      <th>Item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_orders.each do |work_order| %>
+      <tr>
+        <td><%= work_order.wo_number %></td>
+        <td><%= work_order.start_date %></td>
+        <td><%= work_order.comp_date %></td>
+        <td><%= work_order.requestor %></td>
+        <td><%= work_order.priority %></td>
+        <td><%= work_order.repair_facility %></td>
+        <td><%= work_order.repair_type %></td>
+        <td><%= work_order.location %></td>
+        <td><%= work_order.summary %></td>
+        <td><%= work_order.est_completion %></td>
+        <td><%= work_order.percent_complete %></td>
+        <td><%= work_order.user %></td>
+        <td><%= work_order.item %></td>
+        <td><%= link_to 'Show', work_order %></td>
+        <td><%= link_to 'Edit', edit_work_order_path(work_order) %></td>
+        <td><%= link_to 'Destroy', work_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work order', new_work_order_path %>

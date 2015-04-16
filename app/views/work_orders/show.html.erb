@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wo number:</strong>
+  <%= @work_order.wo_number %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @work_order.start_date %>
+</p>
+
+<p>
+  <strong>Comp date:</strong>
+  <%= @work_order.comp_date %>
+</p>
+
+<p>
+  <strong>Requestor:</strong>
+  <%= @work_order.requestor %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @work_order.priority %>
+</p>
+
+<p>
+  <strong>Repair facility:</strong>
+  <%= @work_order.repair_facility %>
+</p>
+
+<p>
+  <strong>Repair type:</strong>
+  <%= @work_order.repair_type %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @work_order.location %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @work_order.summary %>
+</p>
+
+<p>
+  <strong>Est completion:</strong>
+  <%= @work_order.est_completion %>
+</p>
+
+<p>
+  <strong>Percent complete:</strong>
+  <%= @work_order.percent_complete %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @work_order.user %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @work_order.item %>
+</p>
+
+<%= link_to 'Edit', edit_work_order_path(@work_order) %> |
+<%= link_to 'Back', work_orders_path %>

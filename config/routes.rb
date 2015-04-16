@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :work_orders
+
   resources :parts
 
   resources :items
