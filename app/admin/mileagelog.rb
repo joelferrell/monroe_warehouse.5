@@ -1,4 +1,5 @@
 ActiveAdmin.register Mileagelog do
+  permit_params :starting_mile, :ending_mile, :rate, :total_miles, :mile_total_cost
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
