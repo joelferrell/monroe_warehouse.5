@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'workorders/index'
+
   resources :timelogs
 
   resources :mileagelogs
