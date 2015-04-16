@@ -1,4 +1,5 @@
 ActiveAdmin.register WorkOrder do
+  permit_params :wo_number, :start_date, :comp_date, :requestor, :priority, :repair_facility, :repair_type, :location, :summary, :est_completion, :percent_complete
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
